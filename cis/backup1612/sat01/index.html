@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6K57L5G6YB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6K57L5G6YB');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/styles.css">
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <title>pplanetapp</title>
+</head>
+
+<body>
+  <div class="img_container">
+    <img src="/media/in_process.png" alt="">
+  </div>
+
+  <!-- Первый скрипт: трекинг -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var config = {
+        scriptId: 1,
+        googleAnalyticsId: '',
+        params: [{ name: 'cid', type: 'queryString' }]
+      };
+
+      var script = document.createElement('script');
+      script.src = 'https://api.pokerplanets.com/api/web/js/tracker.js';
+      script.onload = function () {
+        tracking(config);
+        document.dispatchEvent(new Event('trackingLoaded'));
+      };
+      document.body.append(script);
+    });
+  </script>
+
+  <!-- Второй скрипт: редирект после трекинга -->
+  <script>
+    document.addEventListener('trackingLoaded', function () {
+      function downloadApp() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        let downloadUrl = "/cis/cis-download/";
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location.href = "https://apps.apple.com/app/pokerplanets/id6630373432";
+        } else if (/android/i.test(userAgent)) {
+          window.location.href = "https://ppdl.me/android";
+        } else if (/Win/.test(userAgent)) {
+          window.location.href = "https://ppdl.me/win";
+        } else if (/Mac/.test(userAgent)) {
+          window.location.href = "https://ppdl.me/mac";
+        } else {
+          window.location.href = "https://pokerplanets.com/";
+        }
+
+        setTimeout(() => {
+          window.location.href = downloadUrl;
+        }, 5000);
+      }
+
+      downloadApp();
+    });
+  </script>
+
+</body>
+
+</html>

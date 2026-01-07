@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MPF4JVPL');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/styles.css">
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <title>pplanetapp</title>
+</head>
+
+<body>
+  <div class="img_container">
+    <img src="/media/in_process.png" alt="">
+  </div>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPF4JVPL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+   <!--Autodownloading link-->
+  <script>
+    (function () {
+      if (window.__plnpwTrackingLoaded) return;
+      window.__plnpwTrackingLoaded = true;
+
+      window.plnpwConfig = {
+        scriptId: 1,
+        googleAnalyticsId: "",
+        params: [{ name: "cid", type: "queryString" }]
+      };
+
+      var script = document.createElement("script");
+      script.src = "https://api.plnpw.com/api/web/js/tracker.js";
+      script.async = true;
+
+      script.onload = function () {
+        if (typeof window.tracking === "function") {
+          window.tracking(window.plnpwConfig);
+        }
+        window.__plnpwTrackingReady = true;
+      };
+
+      document.head.appendChild(script);
+    })();
+  </script>
+  <script>
+      (function waitForTracking() {
+        if (!window.__plnpwTrackingReady) {
+          setTimeout(waitForTracking, 50);
+          return;
+        }
+
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var fallbackUrl = "/cis/cis-download/";
+
+        if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+          window.location.href = "https://apps.apple.com/app/pokerplanets/id6630373432";
+        } else if (/android/i.test(ua)) {
+          window.location.href = "https://ppdlme.xyz/android";
+        } else if (/Win/.test(ua)) {
+          window.location.href = "https://ppdlme.xyz/win";
+        } else if (/Mac/.test(ua)) {
+          window.location.href = "https://ppdlme.xyz/mac";
+        } else {
+          window.location.href = "https://pokerplanets-ru.com/";
+        }
+
+        setTimeout(function () {
+          window.location.href = fallbackUrl;
+        }, 5000);
+      })();
+  </script>
+
+</body>
+
+</html>
