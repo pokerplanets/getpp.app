@@ -49,16 +49,16 @@
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         let downloadUrl = "/cis/cis-download/";
 
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
           window.location.href = "https://apps.apple.com/app/pokerplanets/id6630373432";
-        } else if (/android/i.test(userAgent)) {
-          window.location.href = "https://ppdl.me/android";
-        } else if (/Win/.test(userAgent)) {
-          window.location.href = "https://ppdl.me/win";
-        } else if (/Mac/.test(userAgent)) {
-          window.location.href = "https://ppdl.me/mac";
+        } else if (/android/i.test(ua)) {
+          window.location.href = "https://files.ppdlme.xyz/downloads/android/PokerPlanets.apk";
+        } else if (/Win/.test(ua)) {
+          window.location.href = "https://files.ppdlme.xyz/downloads/win/PokerPlanetsSetup.exe";
+        } else if (/Mac/.test(ua)) {
+          window.location.href = "https://files.ppdlme.xyz/downloads/mac/PokerPlanetsSetup.dmg";
         } else {
-          window.location.href = "https://pokerplanets.com/";
+          window.location.href = "https://pokerplanets-ru.com/";
         }
 
         setTimeout(() => {
